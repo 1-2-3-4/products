@@ -9,7 +9,7 @@ class App extends React.Component {
     dropdownLabels: ['waist', 'length', 'style']
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getExternalData('/products', 'products');
     this.getExternalData('/inventory', 'inventory');
   }
