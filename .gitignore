@@ -3,6 +3,7 @@
 
 # database shell
 *.sqlite3
+mydb.db
 
 # misc
 .DS_Store

@@ -9,8 +9,8 @@ class Dropdown extends React.Component {
 				<select>
 					<option val="">Select</option>
 					{
-						prodOptions.map((prodOption, i) => {
-							return <option key={ `${label}-${prodOption[label]}` } value={ prodOption[label] }>{ prodOption[label] }</option>
+						prodOptions.map(prodOptions => {
+							return <option key={ prodOption[label] } value={ prodOption[label] }>{ prodOption[label] }</option>
 						})
 					}
 				</select>

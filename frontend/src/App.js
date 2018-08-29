@@ -51,7 +51,7 @@ class App extends React.Component {
             products.map((product, i) => {
               const { product_id, product_name, product_image, product_description } = product;
               return ( 
-                <div className="products__wrapper" key={ `product-${ product_id }` } >
+                <div className="products__wrapper" key={ product_id } >
                   <h2>{ product_name }</h2>
                   <div className="products__item">
                     <img className="products__image" src={ product_image } alt={ product_name } />
@@ -61,13 +61,13 @@ class App extends React.Component {
 
                       <div className="products__dropdown--container">
                         {
-                         dropdownLabels.map((dropdownLabel, i) => {
+                         dropdownLabels.map(dropdownLabel => {
                           return (
                             <Dropdown 
                               prodId={ product_id }
                               prodOptions={ this.filterProducts(product_id, dropdownLabel) }
                               label={ dropdownLabel }
-                              key={ `dropdown-${ product_id }-${ dropdownLabel }` }
+                              key={ product_id }
                             />
                           )
                          }) 
