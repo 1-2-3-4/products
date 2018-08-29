@@ -2,7 +2,7 @@
 /node_modules
 
 # database shell
-mydb.db
+*.sqlite3
 
 # misc
 .DS_Store
