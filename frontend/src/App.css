@@ -58,6 +58,14 @@ main {
   line-height: 1.4;
 }
 
+.products__inventory {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: blue;
+}
+
 .products__dropdown--container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,7 +166,7 @@ footer {
   .products__details--container {
     padding-left: 20px;
   }
-  
+
   .products__details--container,
   .products__image {
     width: 50%;

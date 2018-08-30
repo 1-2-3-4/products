@@ -2,15 +2,15 @@ import React from 'react';
 
 class Dropdown extends React.Component {
 	render() {
-		const { label, prodOptions, prodKey } = this.props;
+		const { label, prodOptions, handleChange, prodId } = this.props;
 		return (
 			<div className="products__dropdown">
 				<label>{ label }</label>
-				<select>
+				<select onChange={ (e) => handleChange(e, prodId, label) }>
 					<option val="">Select</option>
 					{
 						prodOptions.map(prodOption => {
-							return <option key={ prodOption[label] } value={ prodOption[label] }>{ prodOption[label] }</option>
+							return <option key={ prodOption } value={ prodOption }>{ prodOption }</option>
 						})
 					}
 				</select>
