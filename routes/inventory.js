@@ -6,9 +6,9 @@ var db = new sqlite3.Database('./mydb.db');
 // query 
 var sql = `SELECT * FROM inventory`;
 
-/* GET products listing. */
-router.get('/', function(req, res, next) {
-    db.all(sql, [], function(err, rows) {
+/* GET inventory listing. */
+router.get('/', (req, res, next) => {
+    db.all(sql, [], (err, rows) => {
     	if (err) {
     		throw err;
     	}
