@@ -7,8 +7,8 @@ var db = new sqlite3.Database('./mydb.db');
 var sql = `SELECT * FROM products`;
 
 /* GET products listing. */
-router.get('/', function(req, res, next) {
-    db.all(sql, [], function(err, rows) {
+router.get('/', (req, res, next) => {
+    db.all(sql, [], (err, rows) => {
     	if (err) {
     		throw err;
     	}

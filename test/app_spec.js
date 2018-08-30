@@ -6,53 +6,53 @@ var expect = chai.expect;
 
 chai.use(chaiHttp);
 
-describe('App', function() {
-  describe('/products', function() {
-    it('responds with status 200', function(done) {
+describe('App', () => {
+  describe('/products', () => {
+    it('responds with status 200', (done) => {
       chai.request(app)
         .get('/products')
-        .end(function(err, res) {
+        .end((err, res) => {
           expect(res).to.have.status(200);
           done();
         });
     });
   });
-  describe('/products', function() {
-    it('responds with json', function(done) {
+  describe('/products', () => {
+    it('responds with json', (done) => {
       chai.request(app)
         .get('/products')
-        .end(function(err, res) {
+        .end((err, res) => {
           expect(res).to.be.json;
           done();
         });
     });
   });
-  describe('/inventory', function() {
-    it('responds with status 200', function(done) {
+  describe('/inventory', () => {
+    it('responds with status 200', (done) => {
       chai.request(app)
         .get('/inventory')
-        .end(function(err, res) {
+        .end((err, res) => {
           expect(res).to.have.status(200);
           expect(res).to.be.json;
           done();
         });
     });
   });
-  describe('/inventory', function() {
-    it('responds with json', function(done) {
+  describe('/inventory', () => {
+    it('responds with json', (done) => {
       chai.request(app)
         .get('/inventory')
-        .end(function(err, res) {
+        .end((err, res) => {
           expect(res).to.be.json;
           done();
         });
     });
   });
-  describe('/foo/bar', function() {
-    it('responds with status 404 for invalid endpoints', function(done) {
+  describe('/foo/bar', () => {
+    it('responds with status 404 for invalid endpoints', (done) => {
       chai.request(app)
         .get('/foo/bar')
-        .end(function(err, res) {
+        .end((err, res) => {
           expect(res).to.have.status(404);
           done();
         });
