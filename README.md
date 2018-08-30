@@ -17,9 +17,9 @@ This project is using React (with create-react-app) to fetch data and display th
 
 ## Instructions
 
-* create the db: `cd` to project root folder and run `sqlite3` to enter the shell. run `.read create.sql` to open connection to the db and import the csv files
+* create the db: `cd` to project root folder and run `npm i` to install dependencies. run `sqlite3` to enter the shell. run `.read create.sql` to open connection to the db and import the csv files
 
-* start the express app: `cd` to project root folder and run `npm i && npm start`
+* start the express app: `cd` to project root folder and run `npm start`
 
 * start the react app: `cd` to `frontend` folder and run `npm i && npm start`
 
