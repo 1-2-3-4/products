@@ -9,10 +9,10 @@ var sql = `SELECT * FROM inventory`;
 /* GET inventory listing. */
 router.get('/', (req, res, next) => {
     db.all(sql, [], (err, rows) => {
-    	if (err) {
-    		throw err;
-    	}
-    	res.json(rows);
+        if (err) {
+            throw err;
+        }
+        res.json(rows);
     });
 });
 

@@ -11,20 +11,20 @@ var sqlGetInventoryById = `SELECT * FROM inventory WHERE product_id = `;
 /* GET products listing. */
 router.get('/', (req, res, next) => {
     db.all(sqlGetAllProducts, [], (err, rows) => {
-    	if (err) {
-    		throw err;
-    	}
-    	res.json(rows);
+        if (err) {
+            throw err;
+        }
+        res.json(rows);
     });
 });
 
 /* GET products by id */
 router.get('/:id', (req, res, next) => {
     db.all(sqlGetProductsById + req.params.id, [], (err, rows) => {
-    	if (err) {
-    		throw err;
-    	}
-    	res.json(rows);
+        if (err) {
+            throw err;
+        }
+        res.json(rows);
     });
 });
 

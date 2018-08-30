@@ -27,6 +27,26 @@ describe('App', () => {
         });
     });
   });
+  describe('/products/:id', () => {
+    it('responds with json', (done) => {
+      chai.request(app)
+        .get('/products/2')
+        .end((err, res) => {
+          expect(res).to.be.json;
+          done();
+        });
+    });
+  });
+  describe('/products/:id/inventory', () => {
+    it('responds with json', (done) => {
+      chai.request(app)
+        .get('/products/2/inventory')
+        .end((err, res) => {
+          expect(res).to.be.json;
+          done();
+        });
+    });
+  });
   describe('/inventory', () => {
     it('responds with status 200', (done) => {
       chai.request(app)
