@@ -130,13 +130,13 @@ class App extends React.Component {
 
                       <div className="products__dropdown--container">
                         { filteredInventory &&
-                         dropdownLabels.map(dropdownLabel => {
+                         dropdownLabels.map((dropdownLabel, i) => {
                           return (
                             <Dropdown
                               prodId={ product_id }
                               prodOptions={ filteredInventory[product_id]['uniqueValues'][dropdownLabel] }
                               label={ dropdownLabel }
-                              key={ dropdownLabel }
+                              key={ dropdownLabel + product_id + i }
                               handleChange={ this.handleChange }
                             />
                           )
