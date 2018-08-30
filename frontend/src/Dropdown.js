@@ -7,10 +7,10 @@ class Dropdown extends React.Component {
 			<div className="products__dropdown">
 				<label>{ label }</label>
 				<select onChange={ (e) => handleChange(e, prodId, label) }>
-					<option val="">Select</option>
+					<option value="">Select</option>
 					{
 						prodOptions.map(prodOption => {
-							return <option key={ prodOption } value={ prodOption }>{ prodOption }</option>
+							return <option key={ prodOption + prodId } value={ prodOption }>{ prodOption }</option>
 						})
 					}
 				</select>
