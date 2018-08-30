@@ -3,7 +3,7 @@ var sqlite3 = require('sqlite3').verbose();
 var router = express.Router();
 // open the database
 var db = new sqlite3.Database('./mydb.db');
-// query 
+// query
 var sql = `SELECT * FROM inventory`;
 
 /* GET inventory listing. */

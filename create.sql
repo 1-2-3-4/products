@@ -1,6 +1,6 @@
--- 
+--
 -- open db file
--- 
+--
 .open mydb.db
 
 --
