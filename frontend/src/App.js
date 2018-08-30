@@ -95,7 +95,6 @@ class App extends React.Component {
   }
 
   handleChange(e, id, label) {
-    console.log(id);
     const { filteredInventory } = this.state;
     filteredInventory[id]['selectedValues'][label] = e.target.value;
     filteredInventory[id]['inStock'] = this.calculateInStock(filteredInventory[id]['selectedValues'], id);
