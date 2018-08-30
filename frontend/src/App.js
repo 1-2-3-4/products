@@ -100,7 +100,7 @@ class App extends React.Component {
     filteredInventory[id]['inStock'] = this.calculateInStock(filteredInventory[id]['selectedValues'], id);
 
     this.setState({
-      filteredInventory: filteredInventory,
+      filteredInventory: filteredInventory
     })
   }
 
