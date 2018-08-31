@@ -70,9 +70,9 @@ class App extends React.Component {
   }
 
   calculateInStock(selectedValues, id) {
-    const { filteredInventory } = this.state;
+    const { inventory } = this.state.filteredInventory[id];
     // search through inventory for matches on selected values
-    const inventoryMatch = filteredInventory[id]['inventory'].filter(a => {
+    const inventoryMatch = inventory.filter(a => {
       for (let key in selectedValues) {
         if (selectedValues[key] !== '' && a[key] !== selectedValues[key]) {
           return false;
