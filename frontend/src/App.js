@@ -121,7 +121,7 @@ class App extends React.Component {
 
                     <div className="products__details--container">
                       <p className="products__description">{ product_description }</p>
-                      <p className="products__inventory">In Stock: { inStock === 0 ? '' : inStock }</p>
+                      <p className="products__inventory">In Stock: { inStock }</p>
 
                       <div className="products__dropdown--container">
                         { filteredInventory &&
