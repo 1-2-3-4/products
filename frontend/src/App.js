@@ -33,16 +33,10 @@ class App extends React.Component {
   }
 
   setupInventory() {
-    const { products } = this.state;
+    const { products, dropdownLabels } = this.state;
     let filteredInventory = {};
-    let defaultSelectedValues = {};
 
-    // create default selected values for dropdowns
-    this.state.dropdownLabels.map(dropdownLabel => {
-      return defaultSelectedValues[dropdownLabel] = '';
-    })
-
-    products.map(product => {
+    products.forEach(product => {
       const { product_id } = product;
       // filter inventory by product ID, and set to new object
       filteredInventory[product_id] = {};
@@ -50,9 +44,10 @@ class App extends React.Component {
       // get unique values to display as options on the dropdown
       filteredInventory[product_id]['uniqueValues'] = this.getUniqueValues(filteredInventory[product_id]['inventory'], product_id);
       // set selected values ('' as default)
-      filteredInventory[product_id]['selectedValues'] = defaultSelectedValues;
-
-      return filteredInventory;
+      filteredInventory[product_id]['selectedValues'] = {};
+      dropdownLabels.forEach(dropdownLabel => {
+        filteredInventory[product_id]['selectedValues'][dropdownLabel] = '';
+      });
     })
 
     this.setState({ filteredInventory : filteredInventory });
