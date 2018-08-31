@@ -60,10 +60,10 @@ class App extends React.Component {
   getUniqueValues(filteredInventory, id) {
     let valueMap = {};
 
-    this.state.dropdownLabels.map(dropdownLabel => {
+    this.state.dropdownLabels.forEach(dropdownLabel => {
       // extract relevant keys and dedupe
       const keyValues = filteredInventory.map(filteredItem => filteredItem[dropdownLabel]);
-      return valueMap[dropdownLabel] = Array.from(new Set(keyValues));
+      valueMap[dropdownLabel] = Array.from(new Set(keyValues));
     })
 
     return valueMap;
